@@ -1,3 +1,4 @@
+import React from 'react';
 import LoginPage from '../pages/auth/loginPage';
 
 export default function App() {

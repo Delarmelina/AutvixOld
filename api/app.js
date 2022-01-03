@@ -14,6 +14,12 @@ app.use(express.json());
 
 // Configure Cors
 app.use(allowCors);
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, x-access-token')
+    next();
+});
 
 // Models
 const User = require('./models/user');
@@ -26,7 +32,7 @@ app.get('/', (req, res) => {
 })
 
 // Open Route - Users List
-app.get('/users', (req, res) => {
+app.get('/users', checkToken, (req, res) => {
 
     User.find()
         .then(users => {
@@ -62,22 +68,16 @@ app.get('/user/:id', async (req, res) => {
 })
 
 function checkToken(req, res, next) {
-    const header = req.headers['authorization'];
-    const token = header && header.split(' ')[1];
-    if (!token) {
-        return res.status(401).json({
-            message: 'Access Denied'
-        })
-    }
+    const token = req.headers['x-access-token'];
+    if (!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
 
-    try {
-        jwt.verify(token, process.env.TOKEN_SECRET);
+    jwt.verify(token, process.env.SECRET, function (err, decoded) {
+        if (err) return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+
+        // se tudo estiver ok, salva no request para uso posterior
+        req.userId = decoded.id;
         next();
-    } catch (err) {
-        res.status(400).json({
-            message: 'Invalid Token'
-        })
-    }
+    });
 }
 
 // Register User
@@ -166,10 +166,14 @@ app.post('/auth/user', async (req, res) => {
                 id: user._id
             },
             secret,
+            { expiresIn: '1h' }
         )
 
-        res.status(200).json({ msg: 'User logged in', token });
-
+        return res.json({
+            success: true,
+            message: 'Enjoy your token!',
+            token: token // este token é para guardar!
+        });
     }
     catch (err) {
         console.error(err);
@@ -182,20 +186,7 @@ app.post('/auth/user', async (req, res) => {
 
 // Logout User
 app.post('/auth/logout', async (req, res) => {
-    
-    try{
-        jwt.logout(req, res);
-
-        res.status(200).json({
-            message: 'Logout'
-        })
-    }
-    catch
-    {
-        return res.status(404).json({
-            message: 'Logout failed'
-        })
-    }
+    res.json({ auth: false, token: null });
 })
 
 // Connect to MongoDB
