@@ -6,11 +6,10 @@ import UserContext from '../context/userContext';
 export default function App() {
 
   const [user, setUser] = useState({
-    email: 'email',
-    password: 'pass',
-    name: 'name',
-    id: 'id',
-    isLogged: true
+    email: localStorage.getItem('email'),
+    name: localStorage.getItem('name'),
+    id: localStorage.getItem('id'),
+    isLogged: localStorage.getItem('isLogged') == 'true'? true : false
   })
 
   return (

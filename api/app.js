@@ -80,6 +80,13 @@ function checkToken(req, res, next) {
     });
 }
 
+app.get('/verifytoken', checkToken, (req, res) => {
+    res.status(200).json({
+        auth: true,
+        message: 'Token is valid'
+    })
+})
+
 // Register User
 app.post('/auth/register', async (req, res) => {
 
@@ -166,7 +173,7 @@ app.post('/auth/user', async (req, res) => {
                 id: user._id
             },
             secret,
-            { expiresIn: '1h' }
+            { expiresIn: '30s' }
         )
 
         return res.json({
@@ -184,9 +191,30 @@ app.post('/auth/user', async (req, res) => {
     }
 })
 
-// Logout User
-app.post('/auth/logout', async (req, res) => {
-    res.json({ auth: false, token: null });
+// Get User By Token
+app.post('/userlogged', (req, res) => {
+    const { token } = req.body;
+
+    if (token == "null") {
+        return res.status(200).json({
+            token: token
+        })
+    }else{
+        decoded = jwt.verify(token, process.env.SECRET)
+    }
+    
+    User.findById(decoded.id)
+        .then(user => {
+            user.password = undefined
+            res.status(200).json({
+                user
+            })
+        })
+        .catch(err => {
+            res.status(500).json({
+                error: err
+            })
+        })
 })
 
 // Connect to MongoDB
