@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import MyContext from '../context/userContext';
+import React, { useContext, useState } from 'react';
 
-import LoginPage from '../pages/auth/loginPage';
-import MainPage from './mainPage';
+import AppRoutes from './AppRoutes';
+import UserContext from '../context/userContext';
 
 export default function App() {
 
-  const [user, setUser] = useState({ email: 'email', password: 'pass', name: 'nome', id: 'id' });
-  const [isLogged, setIsLogged] = useState(false);
+  const [user, setUser] = useState({
+    email: 'email',
+    password: 'pass',
+    name: 'name',
+    id: 'id',
+    isLogged: true
+  })
 
   return (
-    <MyContext.Provider value={{ user, setUser }}>
-      <Routes>
-
-        <Route path="*" element={isLogged ? <MainPage /> : <Navigate to="login" />} />
-
-        <Route path="login" element={<LoginPage />} />
-
-      </Routes>
-    </MyContext.Provider>
+    <UserContext.Provider value={{ user, setUser }}>
+      <AppRoutes isLogged = {user.isLogged} />
+    </UserContext.Provider>
   );
 }
