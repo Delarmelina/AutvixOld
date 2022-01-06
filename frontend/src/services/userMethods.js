@@ -2,11 +2,6 @@ import api from "./api";
 
 export function login(email, password) {
 
-    // if (!email || !password) {
-    //     console.log("Email or password is empty");
-    //     return Promise.reject("Email and password are required");
-    // }
-
     return api.post("/auth/user", {
         email: email,
         password: password

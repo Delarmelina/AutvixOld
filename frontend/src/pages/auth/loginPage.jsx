@@ -13,6 +13,11 @@ function LoginPage() {
 
     function loginUser() {
         login(email.email, password.password)
+            .then(res => {
+                if (res) {
+                    window.location.href = window.location.href
+                }
+            })
     }
 
     return (

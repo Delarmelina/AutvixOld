@@ -9,15 +9,15 @@ import { VerifyLogin } from "../services/userMethods";
 
 export default props => {
 
-    const [element, setElement] = React.useState(<MainPage />);
+    const [element, setElement] = React.useState(<div></div>);
 
     React.useEffect(() => {
         VerifyLogin().then(res => {
             if (res) {
-                console.log('logado');
                 setElement(<MainPage />);
+                // setElementLogin(<Navigate to='/' />);
             }else{
-                console.log('deslogado');
+                // setElement(<Navigate to='/login' />);
                 setElement(<LoginPage />);
             }
         });
