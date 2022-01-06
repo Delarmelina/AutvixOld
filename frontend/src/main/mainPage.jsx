@@ -1,15 +1,19 @@
 import React from "react";
 import SideBar from "../components/sidebar";
 import Header from "../components/header";
+import Footer from "../components/footer";
 
 import SideBarRoutes from "./routes";
 
-export default props => {
+function MainPage() {
     return (
-        <>
-            <Header name='Felipe Ferreira' email='Felipe.Ferreira@autvix.com.br' function='Analista de Automação Pleno' />
+        <div className={`${ localStorage.getItem('darkmode') == 'true' ? 'dark-mode' : '' }`}  >
+            <Header />
             <SideBar />
             <SideBarRoutes />
-        </>
+            <Footer />
+        </div>
     );
 }
+
+export default MainPage

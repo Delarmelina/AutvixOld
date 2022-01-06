@@ -90,7 +90,7 @@ app.get('/verifytoken', checkToken, (req, res) => {
 // Register User
 app.post('/auth/register', async (req, res) => {
 
-    const { name, email, password, confirmpassword } = req.body
+    const { name, email, password, confirmpassword, office } = req.body
 
     // Validation
     if (!name) {
@@ -105,6 +105,10 @@ app.post('/auth/register', async (req, res) => {
         return res.status(422).json({ msg: 'Password is required' });
     }
 
+    if (!office) {
+        return res.status(422).json({ msg: 'Office is required' });
+    }
+    
     if (password !== confirmpassword) {
         return res.status(422).json({ msg: 'Password does not match' });
     }
@@ -124,6 +128,7 @@ app.post('/auth/register', async (req, res) => {
     const user = new User({
         name,
         email,
+        office,
         password: hashedPassword,
     });
 

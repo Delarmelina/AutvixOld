@@ -1,9 +1,12 @@
 import React from "react";
 
-export	default props => {
+import Content from '../../components/content'
+
+export default props => {
+
     return (
-        <div>
-            <h1>Colaboradores</h1>
-        </div>
+        <Content title = 'Colaboradores' >
+
+        </Content>
     );
 }

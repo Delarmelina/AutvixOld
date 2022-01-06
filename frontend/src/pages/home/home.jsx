@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
+
+import Content from '../../components/content'
 
 export default props => {
 
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <Content title = 'Home' >
+
+        </Content>
     );
 }
