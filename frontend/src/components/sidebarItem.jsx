@@ -1,6 +1,4 @@
-import react from 'react';
-
-export default props => {
+export default function sidebarItem(props) {
     
     const getIcon = () => {
         return (

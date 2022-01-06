@@ -14,7 +14,7 @@ function LoginPage() {
         login(email.email, password.password)
             .then(res => {
                 if (res) {
-                    window.location.href = window.location.href
+                    window.location.reload();
                 }
             })
     }

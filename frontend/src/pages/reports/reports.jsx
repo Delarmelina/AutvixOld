@@ -5,7 +5,7 @@ import Card from '../../components/card'
 
 import * as FaIcon from 'react-icons/fa'
 
-export default props => {
+export default function Reports() {
 
     return (
         <Content title='Relatórios' >

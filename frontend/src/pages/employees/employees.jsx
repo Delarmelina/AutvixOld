@@ -2,7 +2,7 @@ import React from "react";
 
 import Content from '../../components/content'
 
-export default props => {
+function Employees() {
 
     return (
         <Content title = 'Colaboradores' >
@@ -10,3 +10,5 @@ export default props => {
         </Content>
     );
 }
+
+export default Employees;
