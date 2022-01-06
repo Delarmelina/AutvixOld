@@ -192,7 +192,7 @@ app.post('/auth/user', async (req, res) => {
 })
 
 // Get User By Token
-app.post('/userlogged', (req, res) => {
+app.post('/userlogged', checkToken, (req, res) => {
     const { token } = req.body;
 
     if (token == "null") {
