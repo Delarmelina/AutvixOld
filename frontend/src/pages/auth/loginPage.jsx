@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
 
 import './loginPage.css';
 import { FaUser } from 'react-icons/fa';
 
-import { login, VerifyLogin } from '../../services/userMethods';
+import { login } from '../../services/userMethods';
 
 function LoginPage() {
 

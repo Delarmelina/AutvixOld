@@ -173,7 +173,7 @@ app.post('/auth/user', async (req, res) => {
                 id: user._id
             },
             secret,
-            { expiresIn: '30s' }
+            { expiresIn: '1h' }
         )
 
         return res.json({

@@ -10,23 +10,24 @@ import { VerifyLogin } from "../services/userMethods";
 export default props => {
 
     const [element, setElement] = React.useState(<div></div>);
+    const [ElementLogin, setElementLogin] = React.useState(<div></div>);
 
     React.useEffect(() => {
         VerifyLogin().then(res => {
             if (res) {
                 setElement(<MainPage />);
-                // setElementLogin(<Navigate to='/' />);
+                setElementLogin(<Navigate to='/' />);
             }else{
-                // setElement(<Navigate to='/login' />);
-                setElement(<LoginPage />);
+                setElement(<Navigate to='/login' />);
+                setElementLogin(<LoginPage />);
             }
         });
     }, []);
 
     return (
-        <Routes>
-            <Route path="*" element={element}/>
-        </Routes>
-
+            <Routes>
+                <Route path="*" element={element}/>
+                <Route path="login" element={ElementLogin}/>
+            </Routes>
     );
 }

@@ -7,12 +7,14 @@ import Employees from "../pages/employees/employees";
 
 const SideBarRoutes = () => {
     return (
-        <Routes>
-            <Route path="*" element={<Home />} />
+        <div className="content-wrapper">
+            <Routes>
+                <Route path="*" element={<Home />} />
 
-            <Route path="/relatorios" element={<Reports />} />
-            <Route path="/colaboradores" element={<Employees />} />
-        </Routes>
+                <Route path="/relatorios" element={<Reports />} />
+                <Route path="/colaboradores" element={<Employees />} />
+            </Routes>
+        </div>
     )   
 }
 

@@ -37,12 +37,11 @@ export function VerifyLogin() {
         token: api.defaults.headers.common["x-access-token"] || "null"
     })
         .then(res => {
-            localStorage.setItem("id", res.data.user._id)
-            localStorage.setItem("name", res.data.user.name)
-            localStorage.setItem("email", res.data.user.email)
+            localStorage.setItem('user', JSON.stringify(res.data.user));
             return true
         })
         .catch(err => {
+            localStorage.setItem('user', JSON.stringify({}));
             return false
         })
 }
