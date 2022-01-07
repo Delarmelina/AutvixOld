@@ -38,6 +38,7 @@ export default function sidebar() {
                                 icon={<MdIcon.MdDescription size={20} />} />
                             <SideBarItem
                                 title='Colaboradores'
+                                tag='RH'
                                 icon={<RiIcon.RiTeamFill size={20} />} />
                             <SideBarItem
                                 title='Calendário'

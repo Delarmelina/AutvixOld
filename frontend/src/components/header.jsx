@@ -5,6 +5,11 @@ import * as MdIcon from "react-icons/md";
 
 export default function header() {
 
+    function Logout() {
+        localStorage.removeItem('token');
+        window.location.href = `/${window.location.origin}/`;
+    }
+
     return (
         <nav className='main-header navbar navbar-expand'>
             <ul className="navbar-nav">
@@ -31,7 +36,7 @@ export default function header() {
                     <a className="nav-link" data-toggle="dropdown" href="/">
                         <FaIcon.FaUser size={20} color={`${ localStorage.getItem('darkmode') === 'true' ? 'white' : '' }`} /></a>
                     <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="/" className="dropdown-item">
+                        <a href="/" onClick={Logout} className="dropdown-item">
                             <div className="media">
                                 <FaIcon.FaUserCircle size={50} color={`${ localStorage.getItem('darkmode') === 'true' ? 'white' : '' }`} />
                                 <div className="media-body ml-3">

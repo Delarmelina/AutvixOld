@@ -90,23 +90,25 @@ app.get('/verifytoken', checkToken, (req, res) => {
 // Register User
 app.post('/auth/register', async (req, res) => {
 
-    const { name, email, password, confirmpassword, office } = req.body
+    const { 
+        id,
+        name,
+        email, 
+        idade,
+        born,
+        telephone,
+        office,
+        department,
+        tags,
+        password, 
+        confirmpassword } = req.body
 
     // Validation
-    if (!name) {
-        return res.status(422).json({ msg: 'Name is required' });
-    }
-
-    if (!email) {
-        return res.status(422).json({ msg: 'Email is required' });
-    }
-
-    if (!password) {
-        return res.status(422).json({ msg: 'Password is required' });
-    }
-
-    if (!office) {
-        return res.status(422).json({ msg: 'Office is required' });
+    if (!id || !name || !email || !born || !telephone || !office || !department || !tags || !password || !confirmpassword) {
+        return res.status(400).json({
+            message: 'Please, fill all fields:' + 
+                'id, ' + 'name, ' + 'email, ' + 'born, ' + 'telephone, ' + 'office, ' + 'department, ' + 'tags, ' + 'password'
+        })
     }
     
     if (password !== confirmpassword) {
@@ -124,11 +126,20 @@ app.post('/auth/register', async (req, res) => {
     const salt = await bcrypt.genSalt(12);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    // Calculando idade
+    const age = Math.floor((new Date() - new Date(born)) / 31536000000);
+    
     // Create User
     const user = new User({
+        id,
         name,
         email,
+        idade: age,
+        born,
+        telephone,
         office,
+        department,
+        tags,
         password: hashedPassword,
     });
 
@@ -221,6 +232,32 @@ app.post('/userlogged', checkToken, (req, res) => {
             })
         })
 })
+
+// Verify Tag
+app.post('/verifytag', checkToken, (req, res) => {
+    const { tag, token } = req.body;
+
+    if (token == "null") {
+        return res.status(200).json({
+            token: token
+        })
+    }else{
+        decoded = jwt.verify(token, process.env.SECRET)
+    }
+
+    User.findById(decoded.id)
+        .then(user => {
+            if (user.tags.includes(tag)) {
+                res.status(200).json({res: true})
+            }else{
+                res.status(200).json({res: false})
+            }
+        })
+        .catch(err => {
+            res.status(500).json({res: err})
+        })
+})
+
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/')

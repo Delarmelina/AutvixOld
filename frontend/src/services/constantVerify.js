@@ -8,11 +8,8 @@ function VerifyifLogged() {
             if (window.location.pathname !== '/login') {
                 window.location.href = '/login'
             }
-            console.log('nao logado')
-        }else{
-            console.log('logged')
         }
     })
 }
 
-setInterval(VerifyifLogged, 30000)
+setInterval(VerifyifLogged, 5000)

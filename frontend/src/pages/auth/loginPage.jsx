@@ -14,7 +14,8 @@ function LoginPage() {
         login(email.email, password.password)
             .then(res => {
                 if (res) {
-                    window.location.reload();
+                    window.location.pathname = ''
+                    window.location.pathname = localStorage.getItem('lastPage') || '/';
                 }
             })
     }
@@ -27,9 +28,24 @@ function LoginPage() {
                     </div>
 
                     <form>
-                        <input type="text" id="login" className="fadeIn second" name="login" placeholder="Email" onChange={e => {setEmail({email: e.target.value})}} />
-                        <input type="password" id="password" className="fadeIn third" name="login" placeholder="Senha" onChange={e => {setPassword({password: e.target.value})}}/>
-                        <input type="button" className="fadeIn fourth" defaultValue="Log In" onClick={loginUser} />
+                        <input type="text" 
+                            id="login" 
+                            className="fadeIn second" 
+                            name="login" 
+                            placeholder="Email" 
+                            onKeyDown={e => { e.key === 'Enter' && loginUser() }}
+                            onChange={e => {setEmail({email: e.target.value})}} />
+                        <input type="password" 
+                            id="password" 
+                            className="fadeIn third" 
+                            name="login" 
+                            placeholder="Senha" 
+                            onKeyDown={e => { e.key === 'Enter' && loginUser() }}
+                            onChange={e => {setPassword({password: e.target.value})}}/>
+                        <input type="button" 
+                            className="fadeIn fourth" 
+                            defaultValue="Log In" 
+                            onClick={loginUser}/>
                     </form>
 
                     <div id="formFooter">

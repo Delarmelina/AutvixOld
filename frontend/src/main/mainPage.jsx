@@ -6,6 +6,9 @@ import Footer from "../components/footer";
 import SideBarRoutes from "./routes";
 
 function MainPage() {
+
+    localStorage.setItem("lastPage", window.location.pathname);
+
     return (
         <div className={`${ localStorage.getItem('darkmode') == 'true' ? 'dark-mode' : '' }`}  >
             <Header />

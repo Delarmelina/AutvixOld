@@ -53,7 +53,7 @@ function Employees() {
                                 </div>
                             </div>
                         </div>
-                        <div className="card-body table-responsive p-0" style={{ height: '500px' }}>
+                        <div className="card-body table-responsive p-0" style={{ height: 'auto' }}>
                             <table className="table table-head-fixed text-nowrap">
                                 <thead style={{ textAlign: 'center' }}>
                                     <tr>

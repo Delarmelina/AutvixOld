@@ -45,3 +45,20 @@ export function VerifyLogin() {
             return false
         })
 }
+
+export function VerifyTag(tag) {
+
+    const token = localStorage.getItem("token");
+    api.defaults.headers.common["x-access-token"] = token
+
+    return api.post("/verifytag", {
+        token: api.defaults.headers.common["x-access-token"] || "null",
+        tag: tag
+    })
+        .then(res => {
+            return res.data.res
+        })
+        .catch(err => {
+            return err
+        })
+}
