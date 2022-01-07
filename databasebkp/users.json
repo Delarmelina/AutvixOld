@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "61d781c8df0330c41032b8a8"
+  },
+  "name": "felipe",
+  "email": "felipe@felipe.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$C374OBTHrqEWQ8mwA4Eo9u.83MzY5Tc5fiKxyT0Nm2wIKnrIETj76",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f3323b906b4a8853bd2"
+  },
+  "name": "derek",
+  "email": "derek@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$BSHlEAovy9EeKMJcFAmypO9E8fHzE24fP2f5NwZTHmQtn.PIvysHC",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f3923b906b4a8853bd5"
+  },
+  "name": "maria",
+  "email": "maria@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$C5W0Ll4P1WEKK/xeiKN44uPrbym2G.xTA6LF3AKxRtlpEemgvc3Vm",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f3f23b906b4a8853bd8"
+  },
+  "name": "deps",
+  "email": "deps@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$/7cMADPytMuS1ShX98KhBOe5UKhC0/7lSiQYIu2z5aSDBBTn3qZSm",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f4723b906b4a8853bdb"
+  },
+  "name": "guilherme",
+  "email": "guilherme@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$DamFkJVTFgWJ7ZWuAnJPVunX.hcwJNWSKiurAxMVmxe5E0zono2be",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f5423b906b4a8853be0"
+  },
+  "name": "victor",
+  "email": "victor@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$F1dWnTAwSRHToF975NMVU..jU5ZDjaHVlTSpNBteqSdY8Dc9M2b86",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f5e23b906b4a8853be3"
+  },
+  "name": "marina",
+  "email": "marina@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$RLVvnL7OYXkeukZeDMxliul8o9utd2k.cr236xzVY7EAXMJNfRjmW",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f6423b906b4a8853be6"
+  },
+  "name": "portela",
+  "email": "portela@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$xxYpgMTl7PZRQJV4GT5dIeJDvsBaNO9trH5BDpj1PRZhSkpuPEPmm",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80f6823b906b4a8853be9"
+  },
+  "name": "alefe",
+  "email": "alefe@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$xfj/qlQWQ29zVFTrp/eWPO.V5eDwnD3/02cK8StHYIIy5XpASMubG",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80fde23b906b4a8853bf5"
+  },
+  "name": "rhynner",
+  "email": "rhynner@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$mAKQhc43dF40osJLhxXrSupK/qwBCXTa3pS81qIzfvAVi6f4X88Ea",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80fe523b906b4a8853bf8"
+  },
+  "name": "monfardini",
+  "email": "monfardini@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$U8I/YxYTW9KeR.g.9f2xJ.CBGtNhKYs.SYH6X66KvxG0D3n3o9Qbi",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80fec23b906b4a8853bfc"
+  },
+  "name": "was",
+  "email": "was@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$ZeLOihpU1vg.sEwS/Zs.aep.v92XV2Rj9zmTVk0T1v.KLCY3W.WeG",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80ff423b906b4a8853bff"
+  },
+  "name": "beatriz",
+  "email": "beatriz@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$8MBU9/joJeqO4JHUuP8YEeUF4f0MP5DXqAiWruTnksUAWhCJkNmlq",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d80ff923b906b4a8853c02"
+  },
+  "name": "ferreira",
+  "email": "ferreira@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$s5Vv4XYm6yAMaPPocYnAQuwssomi1fBhrdooSwPT/eaWJE48CIxoK",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d8100123b906b4a8853c05"
+  },
+  "name": "admin",
+  "email": "admin@teste.com",
+  "office": "Analista de Automação PL",
+  "password": "$2b$12$aN2HSNKYyreOPu/5rlpPO.uvt5qWff3oHOVOvfMf.BZZjsZ1QezuG",
+  "__v": 0
+}]
