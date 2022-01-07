@@ -36,9 +36,9 @@ export default function header() {
                                 <FaIcon.FaUserCircle size={50} color={`${ localStorage.getItem('darkmode') === 'true' ? 'white' : '' }`} />
                                 <div className="media-body ml-3">
                                     <h3 className="dropdown-item-title">
-                                        {JSON.parse(localStorage.getItem('user')).name}
+                                        {JSON.parse(localStorage.getItem('user')).name.toUpperCase()}
                                     </h3>
-                                    <p className="text-sm">{JSON.parse(localStorage.getItem('user')).email}</p>
+                                    <p className="text-sm">{JSON.parse(localStorage.getItem('user')).email.toUpperCase()}</p>
                                     <p className="text-sm text-muted">{JSON.parse(localStorage.getItem('user')).office}</p>
 
                                     <div className="dropdown-divider"></div>

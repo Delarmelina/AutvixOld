@@ -21,8 +21,8 @@ export default function sidebar() {
                             <FaIcon.FaUser size={50} color="white" className="img-circle elevation-2" alt="User Image" />
                         </div>
                         <div className="info">
-                            <a href="/" className="d-block h4">{JSON.parse(localStorage.getItem('user')).name}</a>
-                            <a href="/" className="d-block h6">{JSON.parse(localStorage.getItem('user')).email}</a>
+                            <a href="/" className="d-block h4">{JSON.parse(localStorage.getItem('user')).name }</a>
+                            <a href="/" className="d-block h6">{JSON.parse(localStorage.getItem('user')).email.toUpperCase() }</a>
                         </div>
                     </div>
 
