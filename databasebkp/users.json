@@ -1,136 +1,185 @@
 [{
   "_id": {
-    "$oid": "61d781c8df0330c41032b8a8"
+    "$oid": "61d86a48c8cdfe6cc154f8dd"
   },
-  "name": "felipe",
-  "email": "felipe@felipe.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$C374OBTHrqEWQ8mwA4Eo9u.83MzY5Tc5fiKxyT0Nm2wIKnrIETj76",
+  "id": 1,
+  "name": "Felipe",
+  "email": "felipe@teste.com",
+  "idade": 22,
+  "born": {
+    "$date": "1999-07-31T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Analista Automação Pl",
+  "department": "Automação",
+  "tags": [
+    "RH",
+    "FINANCEIRO",
+    "ADM"
+  ],
+  "password": "$2b$12$idvYIQj0GLnX/jvsZ1RPceHUwynB7qh/fHhiAxYVzPIl2Dss51VsS",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80f3323b906b4a8853bd2"
+    "$oid": "61d86abec8cdfe6cc154f8f8"
   },
-  "name": "derek",
-  "email": "derek@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$BSHlEAovy9EeKMJcFAmypO9E8fHzE24fP2f5NwZTHmQtn.PIvysHC",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61d80f3923b906b4a8853bd5"
-  },
-  "name": "maria",
+  "id": 1,
+  "name": "Maria",
   "email": "maria@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$C5W0Ll4P1WEKK/xeiKN44uPrbym2G.xTA6LF3AKxRtlpEemgvc3Vm",
+  "idade": 22,
+  "born": {
+    "$date": "1999-12-03T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Analista Automação Pl",
+  "department": "Automação",
+  "tags": [
+    "RH",
+    "FINANCEIRO",
+    "ADM"
+  ],
+  "password": "$2b$12$B.tBFWiIK/bgahuTrUFLKupjxIyUKQgzICMSM2XdEMQ3O7c1BuWPW",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80f3f23b906b4a8853bd8"
+    "$oid": "61d86acbc8cdfe6cc154f8fd"
   },
-  "name": "deps",
+  "id": 1,
+  "name": "Deps",
   "email": "deps@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$/7cMADPytMuS1ShX98KhBOe5UKhC0/7lSiQYIu2z5aSDBBTn3qZSm",
+  "idade": 23,
+  "born": {
+    "$date": "1999-01-01T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Analista Automação Pl",
+  "department": "Automação",
+  "tags": [
+    "RH",
+    "FINANCEIRO",
+    "ADM"
+  ],
+  "password": "$2b$12$OfcxJrNbBW40uNsGPoJJz.KSn8ahdQE/ykpRx9ZibVHU7DBHFjwdy",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80f4723b906b4a8853bdb"
+    "$oid": "61d86ae1c8cdfe6cc154f905"
   },
-  "name": "guilherme",
-  "email": "guilherme@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$DamFkJVTFgWJ7ZWuAnJPVunX.hcwJNWSKiurAxMVmxe5E0zono2be",
+  "id": 1,
+  "name": "Tiago",
+  "email": "tiago@teste.com",
+  "idade": 20,
+  "born": {
+    "$date": "2001-12-25T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Analista Automação Pl",
+  "department": "Automação",
+  "tags": [
+    "RH",
+    "FINANCEIRO",
+    "ADM"
+  ],
+  "password": "$2b$12$eUU5hF9IK0Fo.m8YOkEsQ.SZGzXAJsyUJ27QTbQHV8OWnIm/C99AO",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80f5423b906b4a8853be0"
+    "$oid": "61d86af6c8cdfe6cc154f90e"
   },
-  "name": "victor",
+  "id": 1,
+  "name": "Victor",
   "email": "victor@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$F1dWnTAwSRHToF975NMVU..jU5ZDjaHVlTSpNBteqSdY8Dc9M2b86",
+  "idade": 21,
+  "born": {
+    "$date": "2000-08-10T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Analista Automação Pl",
+  "department": "Automação",
+  "tags": [
+    "RH",
+    "FINANCEIRO",
+    "ADM"
+  ],
+  "password": "$2b$12$MBW8d/UUCsgkGYFy4Qs8V..z7qbO5DQUhXm023p4NX7bNUoaeZCFq",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80f5e23b906b4a8853be3"
+    "$oid": "61d885e2c8cdfe6cc154f9ea"
   },
-  "name": "marina",
-  "email": "marina@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$RLVvnL7OYXkeukZeDMxliul8o9utd2k.cr236xzVY7EAXMJNfRjmW",
+  "id": 10,
+  "name": "Suehlen",
+  "email": "suehlen@teste.com",
+  "idade": 27,
+  "born": {
+    "$date": "1994-05-10T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Coordenadora Administrativo",
+  "department": "Administrativo",
+  "tags": [
+    "RH",
+    "ADM"
+  ],
+  "password": "$2b$12$eSm3s8/QqKAzqp2axe/CT.vObitm6tpWr/TXbsEFr4YxmZQNIhUxS",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80f6423b906b4a8853be6"
+    "$oid": "61d88609c8cdfe6cc154f9ed"
   },
-  "name": "portela",
-  "email": "portela@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$xxYpgMTl7PZRQJV4GT5dIeJDvsBaNO9trH5BDpj1PRZhSkpuPEPmm",
+  "id": 11,
+  "name": "Marcelo",
+  "email": "marcelo@teste.com",
+  "idade": 36,
+  "born": {
+    "$date": "1985-05-10T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Financeiro",
+  "department": "Administrativo",
+  "tags": [
+    "RH",
+    "Financeiro"
+  ],
+  "password": "$2b$12$izACEAdsCg61XY2iHxvXyePRXo8vbCYPYHZQEnJ16rTyvrQAxmz7S",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80f6823b906b4a8853be9"
+    "$oid": "61d88638c8cdfe6cc154f9f0"
   },
-  "name": "alefe",
-  "email": "alefe@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$xfj/qlQWQ29zVFTrp/eWPO.V5eDwnD3/02cK8StHYIIy5XpASMubG",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61d80fde23b906b4a8853bf5"
-  },
-  "name": "rhynner",
+  "id": 11,
+  "name": "Rhynner",
   "email": "rhynner@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$mAKQhc43dF40osJLhxXrSupK/qwBCXTa3pS81qIzfvAVi6f4X88Ea",
+  "idade": 31,
+  "born": {
+    "$date": "1990-05-15T00:00:00Z"
+  },
+  "telephone": "027992230004",
+  "office": "Coordenador de Automação",
+  "department": "Automação",
+  "tags": [
+    "Automação",
+    "RH"
+  ],
+  "password": "$2b$12$adC34L/ttuViAqjvtoWGL.ccINdByLpIqqcx/BTUBrSVKgtpL8GjW",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61d80fe523b906b4a8853bf8"
+    "$oid": "61d886c4c8cdfe6cc154f9f3"
   },
-  "name": "monfardini",
-  "email": "monfardini@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$U8I/YxYTW9KeR.g.9f2xJ.CBGtNhKYs.SYH6X66KvxG0D3n3o9Qbi",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61d80fec23b906b4a8853bfc"
+  "id": 11,
+  "name": "Luiz",
+  "email": "luiz@teste.com",
+  "idade": 26,
+  "born": {
+    "$date": "1995-05-15T00:00:00Z"
   },
-  "name": "was",
-  "email": "was@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$ZeLOihpU1vg.sEwS/Zs.aep.v92XV2Rj9zmTVk0T1v.KLCY3W.WeG",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61d80ff423b906b4a8853bff"
-  },
-  "name": "beatriz",
-  "email": "beatriz@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$8MBU9/joJeqO4JHUuP8YEeUF4f0MP5DXqAiWruTnksUAWhCJkNmlq",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61d80ff923b906b4a8853c02"
-  },
-  "name": "ferreira",
-  "email": "ferreira@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$s5Vv4XYm6yAMaPPocYnAQuwssomi1fBhrdooSwPT/eaWJE48CIxoK",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61d8100123b906b4a8853c05"
-  },
-  "name": "admin",
-  "email": "admin@teste.com",
-  "office": "Analista de Automação PL",
-  "password": "$2b$12$aN2HSNKYyreOPu/5rlpPO.uvt5qWff3oHOVOvfMf.BZZjsZ1QezuG",
+  "telephone": "027992230004",
+  "office": "Estagiário",
+  "department": "Automação",
+  "tags": [
+    "Automação"
+  ],
+  "password": "$2b$12$i/nz1bhBz2VZ2fQkFBgCreXdlov4R0SzVsdeb1Ka5TZL99QT42R7O",
   "__v": 0
 }]

@@ -18,7 +18,7 @@ export default function Reports() {
                 <Card
                     title='Reembolso'
                     description='Solicitação de Reembolso'
-                    color='info'
+                    color='lime'
                     icon={<FaIcon.FaCoins />} />
                 <Card
                     title='RDO'
@@ -29,6 +29,30 @@ export default function Reports() {
                     title='Sugestões'
                     description='Sugestões de Melhorias'
                     color='info'
+                    link='sugestoes'
+                    icon={<FaIcon.FaChartLine />} />
+                <Card
+                    title='Ocorrências'
+                    description='Sugestões de Melhorias'
+                    color='gray'
+                    link='sugestoes'
+                    icon={<FaIcon.FaChartLine />} />
+                <Card
+                    title='Relatório SGQ'
+                    description='Sugestões de Melhorias'
+                    color='orange'
+                    link='sugestoes'
+                    icon={<FaIcon.FaChartLine />} />
+                <Card
+                    title='Sugestões'
+                    description='Relatório de Paganento'
+                    color='blue'
+                    link='sugestoes'
+                    icon={<FaIcon.FaChartLine />} />
+                <Card
+                    title='Relatorio de Teste'
+                    description='Relatório de Paganento'
+                    color='warning'
                     link='sugestoes'
                     icon={<FaIcon.FaChartLine />} />
             </div>

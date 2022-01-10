@@ -1,16 +1,10 @@
-__v,_id,email,name,office,password
-0,61d781c8df0330c41032b8a8,felipe@felipe.com,felipe,Analista de Automação PL,$2b$12$C374OBTHrqEWQ8mwA4Eo9u.83MzY5Tc5fiKxyT0Nm2wIKnrIETj76
-0,61d80f3323b906b4a8853bd2,derek@teste.com,derek,Analista de Automação PL,$2b$12$BSHlEAovy9EeKMJcFAmypO9E8fHzE24fP2f5NwZTHmQtn.PIvysHC
-0,61d80f3923b906b4a8853bd5,maria@teste.com,maria,Analista de Automação PL,$2b$12$C5W0Ll4P1WEKK/xeiKN44uPrbym2G.xTA6LF3AKxRtlpEemgvc3Vm
-0,61d80f3f23b906b4a8853bd8,deps@teste.com,deps,Analista de Automação PL,$2b$12$/7cMADPytMuS1ShX98KhBOe5UKhC0/7lSiQYIu2z5aSDBBTn3qZSm
-0,61d80f4723b906b4a8853bdb,guilherme@teste.com,guilherme,Analista de Automação PL,$2b$12$DamFkJVTFgWJ7ZWuAnJPVunX.hcwJNWSKiurAxMVmxe5E0zono2be
-0,61d80f5423b906b4a8853be0,victor@teste.com,victor,Analista de Automação PL,$2b$12$F1dWnTAwSRHToF975NMVU..jU5ZDjaHVlTSpNBteqSdY8Dc9M2b86
-0,61d80f5e23b906b4a8853be3,marina@teste.com,marina,Analista de Automação PL,$2b$12$RLVvnL7OYXkeukZeDMxliul8o9utd2k.cr236xzVY7EAXMJNfRjmW
-0,61d80f6423b906b4a8853be6,portela@teste.com,portela,Analista de Automação PL,$2b$12$xxYpgMTl7PZRQJV4GT5dIeJDvsBaNO9trH5BDpj1PRZhSkpuPEPmm
-0,61d80f6823b906b4a8853be9,alefe@teste.com,alefe,Analista de Automação PL,$2b$12$xfj/qlQWQ29zVFTrp/eWPO.V5eDwnD3/02cK8StHYIIy5XpASMubG
-0,61d80fde23b906b4a8853bf5,rhynner@teste.com,rhynner,Analista de Automação PL,$2b$12$mAKQhc43dF40osJLhxXrSupK/qwBCXTa3pS81qIzfvAVi6f4X88Ea
-0,61d80fe523b906b4a8853bf8,monfardini@teste.com,monfardini,Analista de Automação PL,$2b$12$U8I/YxYTW9KeR.g.9f2xJ.CBGtNhKYs.SYH6X66KvxG0D3n3o9Qbi
-0,61d80fec23b906b4a8853bfc,was@teste.com,was,Analista de Automação PL,$2b$12$ZeLOihpU1vg.sEwS/Zs.aep.v92XV2Rj9zmTVk0T1v.KLCY3W.WeG
-0,61d80ff423b906b4a8853bff,beatriz@teste.com,beatriz,Analista de Automação PL,$2b$12$8MBU9/joJeqO4JHUuP8YEeUF4f0MP5DXqAiWruTnksUAWhCJkNmlq
-0,61d80ff923b906b4a8853c02,ferreira@teste.com,ferreira,Analista de Automação PL,$2b$12$s5Vv4XYm6yAMaPPocYnAQuwssomi1fBhrdooSwPT/eaWJE48CIxoK
-0,61d8100123b906b4a8853c05,admin@teste.com,admin,Analista de Automação PL,$2b$12$aN2HSNKYyreOPu/5rlpPO.uvt5qWff3oHOVOvfMf.BZZjsZ1QezuG
+__v,_id,born,department,email,id,idade,name,office,password,tags,telephone
+0,61d86a48c8cdfe6cc154f8dd,1999-07-31T00:00:00.000Z,Automação,felipe@teste.com,1,22,Felipe,Analista Automação Pl,$2b$12$idvYIQj0GLnX/jvsZ1RPceHUwynB7qh/fHhiAxYVzPIl2Dss51VsS,"[""RH"",""FINANCEIRO"",""ADM""]",027992230004
+0,61d86abec8cdfe6cc154f8f8,1999-12-03T00:00:00.000Z,Automação,maria@teste.com,1,22,Maria,Analista Automação Pl,$2b$12$B.tBFWiIK/bgahuTrUFLKupjxIyUKQgzICMSM2XdEMQ3O7c1BuWPW,"[""RH"",""FINANCEIRO"",""ADM""]",027992230004
+0,61d86acbc8cdfe6cc154f8fd,1999-01-01T00:00:00.000Z,Automação,deps@teste.com,1,23,Deps,Analista Automação Pl,$2b$12$OfcxJrNbBW40uNsGPoJJz.KSn8ahdQE/ykpRx9ZibVHU7DBHFjwdy,"[""RH"",""FINANCEIRO"",""ADM""]",027992230004
+0,61d86ae1c8cdfe6cc154f905,2001-12-25T00:00:00.000Z,Automação,tiago@teste.com,1,20,Tiago,Analista Automação Pl,$2b$12$eUU5hF9IK0Fo.m8YOkEsQ.SZGzXAJsyUJ27QTbQHV8OWnIm/C99AO,"[""RH"",""FINANCEIRO"",""ADM""]",027992230004
+0,61d86af6c8cdfe6cc154f90e,2000-08-10T00:00:00.000Z,Automação,victor@teste.com,1,21,Victor,Analista Automação Pl,$2b$12$MBW8d/UUCsgkGYFy4Qs8V..z7qbO5DQUhXm023p4NX7bNUoaeZCFq,"[""RH"",""FINANCEIRO"",""ADM""]",027992230004
+0,61d885e2c8cdfe6cc154f9ea,1994-05-10T00:00:00.000Z,Administrativo,suehlen@teste.com,10,27,Suehlen,Coordenadora Administrativo,$2b$12$eSm3s8/QqKAzqp2axe/CT.vObitm6tpWr/TXbsEFr4YxmZQNIhUxS,"[""RH"",""ADM""]",027992230004
+0,61d88609c8cdfe6cc154f9ed,1985-05-10T00:00:00.000Z,Administrativo,marcelo@teste.com,11,36,Marcelo,Financeiro,$2b$12$izACEAdsCg61XY2iHxvXyePRXo8vbCYPYHZQEnJ16rTyvrQAxmz7S,"[""RH"",""Financeiro""]",027992230004
+0,61d88638c8cdfe6cc154f9f0,1990-05-15T00:00:00.000Z,Automação,rhynner@teste.com,11,31,Rhynner,Coordenador de Automação,$2b$12$adC34L/ttuViAqjvtoWGL.ccINdByLpIqqcx/BTUBrSVKgtpL8GjW,"[""Automação"",""RH""]",027992230004
+0,61d886c4c8cdfe6cc154f9f3,1995-05-15T00:00:00.000Z,Automação,luiz@teste.com,11,26,Luiz,Estagiário,$2b$12$i/nz1bhBz2VZ2fQkFBgCreXdlov4R0SzVsdeb1Ka5TZL99QT42R7O,"[""Automação""]",027992230004

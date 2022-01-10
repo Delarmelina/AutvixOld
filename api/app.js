@@ -24,14 +24,28 @@ app.use(function (req, res, next) {
 // Models
 const User = require('./models/user');
 
-// Open Route - Public Route
+// Function to test token
+function checkToken(req, res, next) {
+    const token = req.headers['x-access-token'];
+    if (!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
+
+    jwt.verify(token, process.env.SECRET, function (err, decoded) {
+        if (err) return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+
+        // se tudo estiver ok, salva no request para uso posterior
+        req.userId = decoded.id;
+        next();
+    });
+}
+
+// Open Route for communication test
 app.get('/', (req, res) => {
     res.status(200).json({
         message: 'Welcome to the API'
     })
 })
 
-// Open Route - Users List
+// Route get all users
 app.get('/users', checkToken, (req, res) => {
 
     User.find()
@@ -50,36 +64,7 @@ app.get('/users', checkToken, (req, res) => {
         })
 })
 
-// Private Route - Protected Route
-app.get('/user/:id', async (req, res) => {
-
-    const id = req.params.id;
-    const user = await User.findById(id, '-password');
-
-    if (!user) {
-        return res.status(404).json({
-            message: 'User not found'
-        })
-    }
-
-    res.status(200).json({
-        user
-    })
-})
-
-function checkToken(req, res, next) {
-    const token = req.headers['x-access-token'];
-    if (!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
-
-    jwt.verify(token, process.env.SECRET, function (err, decoded) {
-        if (err) return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
-
-        // se tudo estiver ok, salva no request para uso posterior
-        req.userId = decoded.id;
-        next();
-    });
-}
-
+// Function to return if user logged
 app.get('/verifytoken', checkToken, (req, res) => {
     res.status(200).json({
         auth: true,
@@ -155,7 +140,7 @@ app.post('/auth/register', async (req, res) => {
     }
 })
 
-// Login User
+// Login
 app.post('/auth/user', async (req, res) => {
     const { email, password } = req.body;
 
@@ -233,7 +218,7 @@ app.post('/userlogged', checkToken, (req, res) => {
         })
 })
 
-// Verify Tag
+// Verify Tags in User
 app.post('/verifytag', checkToken, (req, res) => {
     const { tag, token } = req.body;
 
