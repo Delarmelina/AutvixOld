@@ -62,3 +62,11 @@ export function VerifyTag(tag) {
             return err
         })
 }
+
+export function DeleteUser(id) {
+
+    api.post("/auth/delete", {
+        id: id
+    })
+}
+

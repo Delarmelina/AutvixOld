@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "21706c93-1636-4498-9851-235b382f928d",
+		"name": "Autvix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/ - Public Route",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"felipe@teste.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/user",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/register",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/logout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDMzMTM0ODg5Mzc3ZjFiZTAyMTcxMSIsImlhdCI6MTY0MTIzNDM3NSwiZXhwIjoxNjQxMjM3OTc1fQ.IVAPBnWJqNogsSyAlRr518LDdmt1jqPLyuI6yHHravw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/users",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/verifyToken",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/verifytag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/verifytag",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"verifytag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/delete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDg2YTQ4YzhjZGZlNmNjMTU0ZjhkZCIsImlhdCI6MTY0MjQyNjE1NiwiZXhwIjoxNjQyNDI5NzU2fQ.MxGCrdV48VAADJA4y9xRzc0YLuxD2opuk8CULFbanmY",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"61e57c28b0f476d03db5f48a\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/delete/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"maria@teste.com\",\r\n    \"office\": \"Engenharia Biomedica\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/update/61d86abec8cdfe6cc154f8f8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"update",
+						"61d86abec8cdfe6cc154f8f8"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3003",
+			"type": "string"
+		}
+	]
+}
