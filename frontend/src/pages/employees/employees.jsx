@@ -30,29 +30,64 @@ function Employees() {
                         <td>{user.department}</td>
 
                         <Popup
-                            trigger={<td><FaIcon.FaPen color="yellow" style={{ cursor: 'pointer' }} /></td>}
+                            trigger={<td style={{ cursor: 'pointer' }}><FaIcon.FaPen color="yellow" /></td>}
                             modal
-                            
-                            className="PopupClass"
                         >
                             {close => (
-                                <div className="modClass" style={{ background: '#555'}}>
-                                    <div className="header"> Update {user.name[0].toUpperCase() + user.name.slice(1).toLowerCase()} </div>
-                                    <div className="content">
+                                <div className="fullPop" style={{ background: '#454D55' }}>
+                                    <div className="header">{user.name[0].toUpperCase() + user.name.slice(1).toLowerCase()}</div>
+                                    <div className="content contentUpdate">
                                         <form>
-                                                <input type="text" className="form-control" placeholder="Name" value={user.name} /> 
-                                                <input type="text" className="form-control" placeholder="Email" value={user.email} />
-                                                <input type="text" className="form-control" placeholder="Department" value={user.department} />
+                                            <div className="card-body row">
+                                                <div className="col-md-6">
+                                                    <div><label>Name</label></div>
+                                                    <div><input type="text" className="form-control" value={user.name} /></div>
+
+                                                    <div><label>Email</label></div>
+                                                    <div><input type="text" className="form-control" value={user.email} /></div>
+
+                                                    <div><label>Department</label></div>
+                                                    <div><input type="text" className="form-control" value={user.department} /></div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div><label>Sobrenome</label></div>
+                                                    <div><input type="text" className="form-control" value={user.name} /></div>
+
+                                                    <div><label>Telefone</label></div>
+                                                    <div><input type="text" className="form-control" value={user.telephone} /></div>
+
+                                                    <div><label>Cargo</label></div>
+                                                    <div><input type="text" className="form-control" value={user.office} /></div>
+                                                </div>
+                                                <div className="col-md-12">
+                                                    <div className="form-group">
+                                                        <div className="bootstrap-duallistbox-container row moveonselect moveondoubleclick">
+                                                            <div className="col-md-6">
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                            </div>
+                                                            <div className="col-md-6">
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                                {/* dasbnfasbfaisbhfas */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </form>
                                     </div>
-                                    <div className="actions">
-                                        <button className="button mr-5"
+                                    <div className="footer">
+                                        <button className="btn button btn-warning mr-5"
                                             onClick={() => {
                                                 setupdate(!update)
                                                 close();
                                             }}
                                         >Update</button>
-                                        <button className="button ml-5"
+                                        <button className="btn button btn-dark ml-5"
                                             onClick={() => {
                                                 close();
                                             }}
@@ -63,26 +98,24 @@ function Employees() {
                         </Popup>
 
                         <Popup
-                            trigger={<td><FaIcon.FaTrash color="red" style={{ cursor: 'pointer' }} /></td>}
+                            trigger={<td style={{ cursor: 'pointer' }}><FaIcon.FaTrash color="red" /></td>}
                             modal
-                            
-                            className="PopupClass"
                         >
                             {close => (
-                                <div className="modClass" style={{ background: '#440000'}}>
-                                    <div className="header"> Delete User </div>
+                                <div className="fullPop" style={{ background: '#F54848' }}>
+                                    <div className="header">Delete User</div>
                                     <div className="content">
                                         <p>Are you sure you want to delete this user?</p>
                                     </div>
-                                    <div className="actions">
-                                        <button className="button mr-5"
+                                    <div className="footer">
+                                        <button className="btn button btn-danger mr-5"
                                             onClick={() => {
                                                 DeleteUser(user._id)
                                                 setupdate(!update)
                                                 close();
                                             }}
                                         >Delete</button>
-                                        <button className="button ml-5"
+                                        <button className="btn button btn-dark ml-5"
                                             onClick={() => {
                                                 close();
                                             }}
