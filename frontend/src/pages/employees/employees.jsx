@@ -22,8 +22,6 @@ function Employees() {
         getUserList().then(res => {
             settableElement(res.map(user => {
 
-                console.log(user.email && '')
-
                 return (
                     <tr key={user._id}>
                         <td>{user.id}</td>

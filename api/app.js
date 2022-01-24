@@ -19,6 +19,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+// Routes
 app.use(require('./routes/users'));
 
 // Connect to MongoDB
