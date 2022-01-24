@@ -18,3 +18,6 @@ import 'admin-lte/plugins/raphael/raphael.min.js'
 import 'admin-lte/plugins/jquery-mapael/maps/usa_states.min.js'
 import 'admin-lte/plugins/jquery-mapael/jquery.mapael.min.js'
 import 'admin-lte/plugins/chart.js/Chart.min.js'
+
+import 'react-dual-listbox/lib/react-dual-listbox.css'
+import 'react-dual-listbox/src/less/react-dual-listbox.less'

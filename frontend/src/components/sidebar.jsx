@@ -17,12 +17,12 @@ export default function sidebar() {
 
                 <div className="sidebar">
                     <div className="user-panel mt-3 pb-3 mb-3 d-flex">
-                        <div className="image">
+                        {/* <div className="image">
                             <FaIcon.FaUser size={50} color="white" className="img-circle elevation-2" alt="User Image" />
-                        </div>
+                        </div> */}
                         <div className="info">
                             <a href="/" className="d-block h4">{JSON.parse(localStorage.getItem('user')).name }</a>
-                            <a href="/" className="d-block h6">{JSON.parse(localStorage.getItem('user')).email.toUpperCase() }</a>
+                            <a href="/" className="d-block h6">{JSON.parse(localStorage.getItem('user')).office }</a>
                         </div>
                     </div>
 

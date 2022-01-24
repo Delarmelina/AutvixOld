@@ -70,3 +70,19 @@ export function DeleteUser(id) {
     })
 }
 
+export function UpdateUser(user, selected) {
+
+    api.post("/auth/update", {
+        _id: user._id,
+        id: user.id,
+        name: user.name,
+        surname: user.surname,
+        adress: user.adress,
+        email: user.email,
+        born: user.born,
+        telephone: user.telephone,
+        office: user.office,
+        department: user.department,
+        tags: selected
+    })
+}

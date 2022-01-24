@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User', {
     id: Number,
     name: String,
+    surname: String,
+    adress: String,
     email: String,
     idade: Number,
     born: Date,

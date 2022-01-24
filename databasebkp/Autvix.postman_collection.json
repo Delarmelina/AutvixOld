@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "21706c93-1636-4498-9851-235b382f928d",
+		"_postman_id": "6b783ebf-ddd5-4413-9c32-d4a1f23503d9",
 		"name": "Autvix",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,7 +9,10 @@
 			"name": "/ - Public Route",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		},
@@ -44,7 +47,10 @@
 			"name": "/auth/register",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		},
@@ -52,7 +58,10 @@
 			"name": "/auth/logout",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		},
@@ -86,7 +95,10 @@
 			"name": "/user/verifyToken",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		},

@@ -172,8 +172,9 @@ router.post('/auth/register', async (req, res) => {
     const {
         id,
         name,
+        surname,
+        adress,
         email,
-        idade,
         born,
         telephone,
         office,
@@ -183,10 +184,20 @@ router.post('/auth/register', async (req, res) => {
         confirmpassword } = req.body
 
     // Validation
-    if (!id || !name || !email || !born || !telephone || !office || !department || !tags || !password || !confirmpassword) {
+    if (!id || !name || !surname || !adress || !email || !born || !telephone || !office || !department || !tags || !password || !confirmpassword) {
         return res.status(400).json({
             message: 'Please, fill all fields:' +
-                'id, ' + 'name, ' + 'email, ' + 'born, ' + 'telephone, ' + 'office, ' + 'department, ' + 'tags, ' + 'password'
+                'id, ' + 
+                'name, ' + 
+                'surname, ' +
+                'adress, ' +
+                'email, ' + 
+                'born, ' + 
+                'telephone, ' + 
+                'office, ' + 
+                'department, ' + 
+                'tags, ' + 
+                'password'
         })
     }
 
@@ -212,6 +223,8 @@ router.post('/auth/register', async (req, res) => {
     const user = new User({
         id,
         name,
+        surname,
+        adress,
         email,
         idade: age,
         born,
@@ -251,11 +264,13 @@ router.post('/auth/delete', async (req, res) => {
 })
 
 // Update User
-router.post('/auth/update/:id', async (req, res) => {
+router.post('/auth/update', async (req, res) => {
 
     const {
         id,
         name,
+        surname,
+        adress,
         email,
         born,
         telephone,
@@ -267,9 +282,11 @@ router.post('/auth/update/:id', async (req, res) => {
     born? age = Math.floor((new Date() - new Date(born)) / 31536000000): age = User.findById(req.params.id).idade
 
     // Update User
-    const user = await User.findByIdAndUpdate(req.params.id, {
+    const user = await User.findByIdAndUpdate(req.body._id, {
         id: id,
         name: name,
+        surname: surname,
+        adress: adress,
         email: email,
         idade: age,
         born: born,
