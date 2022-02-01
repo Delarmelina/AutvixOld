@@ -50,10 +50,10 @@ export default function Reports() {
                     link='sugestoes'
                     icon={<FaIcon.FaChartLine />} />
                 <Card
-                    title='Relatorio de Teste'
-                    description='Relatório de Paganento'
-                    color='warning'
-                    link='sugestoes'
+                    title='Modelos'
+                    description='Modelos do relatório'
+                    color='success'
+                    link='models'
                     icon={<FaIcon.FaChartLine />} />
             </div>
         </Content>

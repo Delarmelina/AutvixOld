@@ -14,7 +14,7 @@ export default props => {
     }
 
     return (
-        <a href={`./Reports/${props.link || props.title}`} className='col-lg-3 col-6 pointer-event cardMaxWidth'>
+        <a href={`./relatorios/${props.link || props.title}`} className='col-lg-3 col-6 pointer-event cardMaxWidth'>
             <div className={`small-box bg-${props.color}`}>
                 <div className='inner'>
                     <h3>{props.title}</h3>

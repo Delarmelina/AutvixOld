@@ -20,7 +20,7 @@ export default function header() {
 
             <ul className='navbar-nav ml-auto'>
                 <li className="nav-item">
-                    <a className="nav-link" href='/' onClick={() => {
+                    <a className="nav-link" href={localStorage.getItem('lastPage')} onClick={() => {
                             if (localStorage.getItem("darkmode") === 'true') {
                                 localStorage.setItem("darkmode", 'false');
                                 window.location.reload();

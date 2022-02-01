@@ -21,6 +21,7 @@ app.use(function (req, res, next) {
 
 // Routes
 app.use(require('./routes/users'));
+app.use(require('./routes/lists'));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/')

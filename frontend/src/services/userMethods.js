@@ -70,7 +70,12 @@ export function DeleteUser(id) {
     })
 }
 
-export function UpdateUser(user, selected) {
+export function UpdateUser(user, tags) {
+
+    const date = user.born.split('/')
+    const bornDate = `${date[2]}-${date[1]}-${date[0]}T00:00:01.000+00:00`
+
+    user = { ...user, tags: tags, born: bornDate }
 
     api.post("/auth/update", {
         _id: user._id,
@@ -83,6 +88,29 @@ export function UpdateUser(user, selected) {
         telephone: user.telephone,
         office: user.office,
         department: user.department,
-        tags: selected
+        tags: user.tags
+    })
+}
+
+export function CreateUser(user, tags) {
+
+    const date = user.born.split('/')
+    const bornDate = `${date[2]}-${date[1]}-${date[0]}T00:00:01.000+00:00`
+
+    user = { ...user, tags: tags, born: bornDate }
+
+    api.post("auth/register", {
+        id: user.id,
+        name: user.name,
+        surname: user.surname,
+        adress: user.adress,
+        email: user.email,
+        born: user.born,
+        telephone: user.telephone,
+        office: user.office,
+        department: user.department,
+        tags: user.tags,
+        password: user.password,
+        confirmpassword: user.confirmpassword
     })
 }

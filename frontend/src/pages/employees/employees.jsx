@@ -52,7 +52,7 @@ function Employees() {
     return (
         <>
             {tagVerify ?
-                <Content title='Colaboradores' >
+                <Content title='Colaboradores'>
                     <div className="row mb-3 mt-1">
                         <div className="col-12">
 

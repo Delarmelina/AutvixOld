@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 })
 
 // Route get all users
-router.get('/users', checkToken, (req, res) => {
+router.get('/users', (req, res) => {
 
     User.find()
         .then(users => {

@@ -21,7 +21,7 @@ class Widget extends React.Component {
 
     onChange = (selected, selection) => {
         this.setState({ selected })
-        
+
         const tags = []
         selected.map(tag => {
             this.props.options.map(option => {
