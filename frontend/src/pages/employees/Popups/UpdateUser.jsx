@@ -17,22 +17,18 @@ function UpdateUserPopUp(props) {
     const [selected, setSelected] = useState(User.tags)
 
     useEffect(() => {
-        const born = props.user.born.substr(0,10).split('-')
-        setUser({...User, born: `${born[2]}/${born[1]}/${born[0]}`})
+        const born = props.user.born.substr(0, 10).split('-')
+        setUser({ ...User, born: `${born[2]}/${born[1]}/${born[0]}` })
     }, [])
 
     const opt = []
-    async function GetTags(){
+    useEffect(async () => {
         let Tags = await GetList("Tags")
-        
+
         Tags.map(tag => {
-            opt.push({value: (opt.length+1).toString(), label: tag})
+            opt.push({ value: (opt.length + 1).toString(), label: tag })
         })
         await setOptions(opt)
-    }
-
-    useEffect(() => {
-        GetTags()
     }, [])
 
     return (
@@ -61,6 +57,11 @@ function UpdateUserPopUp(props) {
                                         <div className="m-0 mt-3"><label className="m-0">Sobrenome</label></div>
                                         <div><input type="text" className="form-control" value={User.surname} onChange={
                                             (e) => { setUser({ ...User, surname: e.target.value }) }
+                                        } /></div>
+                                        
+                                        <div className="m-0 mt-3"><label className="m-0">Abreviatura</label></div>
+                                        <div><input type="text" className="form-control" value={User.abrev} onChange={
+                                            (e) => { setUser({ ...User, abrev: e.target.value }) }
                                         } /></div>
 
                                         <div className="m-0 mt-3"><label className="m-0">Nascimento</label></div>
@@ -101,6 +102,7 @@ function UpdateUserPopUp(props) {
 
                                         <input type="submit" onSubmit={null} onClick={() => {
                                             UpdateUser(User, selected)
+                                            props.setupdate(!props.update)
                                             close();
                                         }} hidden />
                                     </form>
@@ -109,6 +111,7 @@ function UpdateUserPopUp(props) {
                                     <button className="btn button btn-warning mr-5"
                                         onClick={() => {
                                             UpdateUser(User, selected)
+                                            props.setupdate(!props.update)
                                             close();
                                         }}
                                     >Update</button>

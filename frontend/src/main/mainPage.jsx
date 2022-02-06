@@ -1,7 +1,7 @@
 import React from "react";
-import SideBar from "../components/sidebar";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import SideBar from "../components/layout/sidebar";
+import Header from "../components/layout/header";
+import Footer from "../components/layout/footer";
 
 import SideBarRoutes from "./routes";
 
@@ -14,7 +14,7 @@ function MainPage() {
             <Header />
             <SideBar />
             <SideBarRoutes />
-            <Footer />
+            <Footer className="layout-footer-fixed"/>
         </div>
     );
 }

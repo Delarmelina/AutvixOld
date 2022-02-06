@@ -138,7 +138,7 @@ router.post('/userlogged', checkToken, (req, res) => {
 })
 
 // Verify Tags in User
-router.post('/verifytag', checkToken, (req, res) => {
+router.post('/verifytag', checkToken, async (req, res) => {
     const { tag, token } = req.body;
 
     if (token == "null") {
@@ -149,17 +149,11 @@ router.post('/verifytag', checkToken, (req, res) => {
         decoded = jwt.verify(token, process.env.SECRET)
     }
 
-    User.findById(decoded.id)
-        .then(user => {
-            if (user.tags.includes(tag)) {
-                res.status(200).json({ res: true })
-            } else {
-                res.status(200).json({ res: false })
-            }
-        })
-        .catch(err => {
-            res.status(500).json({ res: err })
-        })
+    user = await User.findById(decoded.id)
+
+    const numTags = await tag.filter(comp => user.tags.includes(comp))
+
+    await res.status(200).json({ res: numTags.length > 0? true : false })
 })
 
 // -----------
@@ -173,6 +167,7 @@ router.post('/auth/register', async (req, res) => {
         id,
         name,
         surname,
+        abrev,
         adress,
         email,
         born,
@@ -184,19 +179,20 @@ router.post('/auth/register', async (req, res) => {
         confirmpassword } = req.body
 
     // Validation
-    if (!id || !name || !surname || !adress || !email || !born || !telephone || !office || !department || !tags || !password || !confirmpassword) {
+    if (!id || !name || !surname || !adress || !email || !born || !telephone || !office || !department || !tags || !password || !confirmpassword || !abrev) {
         return res.status(400).json({
             message: 'Please, fill all fields:' +
-                'id, ' + 
-                'name, ' + 
+                'id, ' +
+                'name, ' +
                 'surname, ' +
+                'abrev, ' +
                 'adress, ' +
-                'email, ' + 
-                'born, ' + 
-                'telephone, ' + 
-                'office, ' + 
-                'department, ' + 
-                'tags, ' + 
+                'email, ' +
+                'born, ' +
+                'telephone, ' +
+                'office, ' +
+                'department, ' +
+                'tags, ' +
                 'password'
         })
     }
@@ -224,6 +220,7 @@ router.post('/auth/register', async (req, res) => {
         id,
         name,
         surname,
+        abrev,
         adress,
         email,
         idade: age,
@@ -270,22 +267,24 @@ router.post('/auth/update', async (req, res) => {
         id,
         name,
         surname,
+        abrev,
         adress,
         email,
         born,
         telephone,
         office,
         department,
-        tags} = req.body
+        tags } = req.body
 
     // Calculando idade
-    born? age = Math.floor((new Date() - new Date(born)) / 31536000000): age = User.findById(req.params.id).idade
+    born ? age = Math.floor((new Date() - new Date(born)) / 31536000000) : age = User.findById(req.params.id).idade
 
     // Update User
     const user = await User.findByIdAndUpdate(req.body._id, {
         id: id,
         name: name,
         surname: surname,
+        abrev: abrev,
         adress: adress,
         email: email,
         idade: age,

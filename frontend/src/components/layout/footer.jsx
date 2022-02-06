@@ -3,7 +3,7 @@ import React from "react";
 export default function footer() {
 
   return (
-    <footer className="main-footer">
+    <footer className="main-footer footer">
       <strong>
         <span>Copyright © 2008-2022 </span>
         <a href="/">Felipe Ferreira</a>

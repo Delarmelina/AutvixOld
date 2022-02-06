@@ -22,6 +22,7 @@ app.use(function (req, res, next) {
 // Routes
 app.use(require('./routes/users'));
 app.use(require('./routes/lists'));
+app.use(require('./routes/report'));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/')

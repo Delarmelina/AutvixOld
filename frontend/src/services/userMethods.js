@@ -82,6 +82,7 @@ export function UpdateUser(user, tags) {
         id: user.id,
         name: user.name,
         surname: user.surname,
+        abrev: user.abrev,
         adress: user.adress,
         email: user.email,
         born: user.born,

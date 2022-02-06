@@ -1,32 +1,41 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
-import * as FaIcon from "react-icons/fa";
 import './style/card.css'
 
+import { VerifyTag } from "../services/userMethods";
+
 export default props => {
-    
+
+    const [tag, setTag] = useState()
+    useEffect(async () => {
+        props.tags ? setTag(await VerifyTag(props.tags)) : setTag(true)
+    }, [])
+
     const getIcon = () => {
         return (
-            <>
-            {props.icon}
-            </>
+            <>{props.icon}</>
         )
     }
 
     return (
-        <a href={`./relatorios/${props.link || props.title}`} className='col-lg-3 col-6 pointer-event cardMaxWidth'>
-            <div className={`small-box bg-${props.color}`}>
-                <div className='inner'>
-                    <h3>{props.title}</h3>
-                    <p>{props.description}</p>
-                </div>
-                <div className='icon'>
-                    {getIcon()}
-                </div>
-                <a href='#' className='small-box-footer'>
-                    Mais Informações <FaIcon.FaArrowCircleRight />
+        <>
+            {tag ?
+                <a className='col-lg-3 col-6 pointer-event cardMaxWidth' href={`./relatorios/${props.link || props.name}`}>
+                    <div className={`small-box bg-${props.color}`}>
+                        <div className='inner'>
+                            <h3>{props.name}</h3>
+                            <p>{props.description}</p>
+                        </div>
+                        <div className='icon'>
+                            {getIcon()}
+                        </div>
+                        <span className='small-box-footer'>
+
+                        </span>
+                    </div>
                 </a>
-            </div>
-        </a>
+                : null
+            }
+        </>
     )
 }

@@ -1,35 +1,25 @@
-import { VerifyTag } from '../services/userMethods'
-
 import { useState, useEffect } from 'react'
+
+import { VerifyTag } from '../../services/userMethods'
 
 export default function SidebarItem(props) {
 
     const [tag, setTag] = useState()
+    useEffect(async () => {
+        props.tag ? setTag(await VerifyTag(props.tag)) : setTag(true)
+    }, [])
 
     const getIcon = () => {
         return (
-            <>
-                {props.icon}
-            </>
+            <>{props.icon}</>
         )
     }
 
-    useEffect(() => {
-        if (props.tag) {
-            VerifyTag(props.tag)
-                .then(res => {
-                    if (res) {
-                        setTag(true)
-                    }
-                })
-        }
-    }, [])
-
     return (
         <>
-            {tag || !props.tag ?
+            {tag ?
                 <li className="nav-item">
-                    <a href={props.link || `/${props.title}`} className="nav-link">
+                    <a href={`../../${props.link}` || `../../${props.title}`} className="nav-link">
                         {getIcon()}
                         <p className='ml-3 h5'>
                             {props.title}

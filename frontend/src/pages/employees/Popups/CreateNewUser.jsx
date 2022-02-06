@@ -33,22 +33,18 @@ function CreateNewUserPopUp(props) {
     const [selected, setSelected] = useState([]);
 
     const opt = []
-    async function GetTags(){
+    useEffect(async () => {
         let Tags = await GetList("Tags")
-        
+
         Tags.map(tag => {
-            opt.push({value: (opt.length+1).toString(), label: tag})
+            opt.push({ value: (opt.length + 1).toString(), label: tag })
         })
         await setOptions(opt)
-    }
-
-    useEffect(() => {
-        GetTags()
     }, [])
 
     useEffect(() => {
-        if (User.born.length == 2 || User.born.length == 5){
-            setUser({...User, born: `${User.born}/`})
+        if (User.born.length == 2 || User.born.length == 5) {
+            setUser({ ...User, born: `${User.born}/` })
         }
     }, [User.born])
 
@@ -86,7 +82,7 @@ function CreateNewUserPopUp(props) {
 
                                         <div className="m-0 mt-3"><label className="m-0">Nascimento</label></div>
                                         <div><input type="text" className="form-control date mt-1" value={User.born}
-                                            placeholder="DD/MM/AAAA" maxLength={10} 
+                                            placeholder="DD/MM/AAAA" maxLength={10}
                                             onChange={(e) => { setUser({ ...User, born: e.target.value }) }
                                             } /></div>
 
@@ -102,7 +98,7 @@ function CreateNewUserPopUp(props) {
 
                                         <div className="m-0 mt-3"><label className="m-0">Endereço</label></div>
                                         <div><input type="text" className="form-control" value={User.adress} onChange={
-                                            (e) => { setUser({ ...User, adress: e.target.value}) }
+                                            (e) => { setUser({ ...User, adress: e.target.value }) }
                                         } /></div>
 
                                         <div className="m-0 mt-3"><label className="m-0">Departamento</label></div>
@@ -132,13 +128,18 @@ function CreateNewUserPopUp(props) {
                                             <DualListBox tags={selected} options={options} setSelected={setSelected} />
                                         </div>
 
-                                        <input type="submit" onSubmit={null} disabled hidden />
+                                        <input type="submit" onSubmit={null} onClick={() => {
+                                            CreateUser(User, selected)
+                                            props.setupdate(!props.update)
+                                            close()
+                                        }} hidden />
                                     </form>
                                 </div>
                                 <div className="footer p-3" style={{ background: '#454D55' }}>
                                     <button className="btn button btn-success mr-5"
                                         onClick={() => {
                                             CreateUser(User, selected)
+                                            props.setupdate(!props.update)
                                             close()
                                         }}
                                     >Create</button>

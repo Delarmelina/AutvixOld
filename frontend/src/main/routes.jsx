@@ -5,7 +5,7 @@ import Home from "../pages/home/home";
 import Reports from "../pages/reports/reports";
 import Employees from "../pages/employees/employees";
 
-import Models from "../pages/reports/types/models"
+import RDV from "../pages/reports/general/rdv"
 
 const SideBarRoutes = () => {
     return (
@@ -15,7 +15,7 @@ const SideBarRoutes = () => {
             <Route path="/relatorios" element={<Reports />} />
             <Route path="/colaboradores" element={<Employees />} />
 
-            <Route path="/relatorios/models" element={<Models />} />
+            <Route path="/relatorios/rdv" element={<RDV />} />
         </Routes>
     )
 }
