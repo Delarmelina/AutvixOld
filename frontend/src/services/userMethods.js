@@ -46,21 +46,17 @@ export function VerifyLogin() {
         })
 }
 
-export function VerifyTag(tag) {
+export async function VerifyTag(tag) {
 
     const token = localStorage.getItem("token");
     api.defaults.headers.common["x-access-token"] = token
 
-    return api.post("/verifytag", {
+    let res = await api.post("/verifytag", {
         token: api.defaults.headers.common["x-access-token"] || "null",
         tag: tag
     })
-        .then(res => {
-            return res.data.res
-        })
-        .catch(err => {
-            return err
-        })
+
+    return res.data.res
 }
 
 export function DeleteUser(id) {

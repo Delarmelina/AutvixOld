@@ -23,24 +23,19 @@ export default function NewRDV() {
         num: "000",
         datai: "",
         dataf: "",
-        total: 0,
         desps: [
-            { id: 1, desp: "", desc: "", value: "" },
-            { id: 2, desp: "", desc: "", value: "" },
-            { id: 3, desp: "", desc: "", value: "" }
+            { id: 1, desp: "", date: "", desc: "", value: "" },
+            { id: 2, desp: "", date: "", desc: "", value: "" },
+            { id: 3, desp: "", date: "", desc: "", value: "" }
         ]
     })
 
     useEffect(() => {
-        setForm({ ...form, rn: `${form.cc}-RDV-${form.num.length == 0 ? "000" : form.num.length == 1 ? `00${form.num}` : form.num.length == 2 ? `0${form.num}` : `${form.num}`}-A-${user.abrev}` })
+        setForm({ ...form, rn: `${form.cc}-RDV-${form.num.length === 0 ? "000" : form.num.length === 1 ? `00${form.num}` : form.num.length === 2 ? `0${form.num}` : `${form.num}`}-A-${user.abrev}` })
     }, [form.cc, form.num])
 
     const [element, setE] = useState()
     useEffect(() => {
-        let i = 0
-
-
-
         setE(form.desps.map((item, index) => {
             return <tr key={index}>
                 <th style={{ padding: "0px" }}>
@@ -48,12 +43,16 @@ export default function NewRDV() {
                         style={{ height: "10px", padding: "10px", backgroundColor: "transparent", color: "white", border: "none" }} />
                 </th>
                 <th style={{ padding: "0px" }}>
+                    <input type="text" value={form.desps[index].date} onChange={e => changeForm(e, index, "date")}
+                        style={{ height: "10px", padding: "10px", backgroundColor: "transparent", color: "white", border: "none" }} />
+                </th>
+                <th style={{ padding: "0px" }}>
                     <input type="text" value={form.desps[index].desc} onChange={e => changeForm(e, index, "desc")}
                         style={{ height: "10px", padding: "10px", backgroundColor: "transparent", color: "white", border: "none" }} />
                 </th>
                 <th style={{ padding: "0px" }}>
-                    <input type="text" value={form.desps[index].value} onChange={e => changeForm(e, index, "value")}
-                        style={{ height: "10px", padding: "10px", backgroundColor: "transparent", color: "white", border: "none" }} />
+                    <input type="number" value={form.desps[index].value} onChange={e => changeForm(e, index, "value")}
+                        style={{ height: "10px", padding: "10px", backgroundColor: "transparent", color: "white", border: "none", textAlign:"center" }} />
                 </th>
             </tr>
         }))
@@ -62,10 +61,10 @@ export default function NewRDV() {
     useEffect(() => {
         let t = 0
         form.desps.map(desp => {
-            if (desp.value == "" || desp.value == "0") {
-                t = parseFloat(t)
+            if (desp.value === "" || desp.value === "0") {
+                return t = parseFloat(t)
             } else {
-                t = t + parseFloat(desp.value)
+                return t = t + parseFloat(desp.value)
             }
         })
         setTotal(t)
@@ -77,17 +76,19 @@ export default function NewRDV() {
         if (item === "desp") it.desps[index].desp = e.target.value
         if (item === "desc") it.desps[index].desc = e.target.value
         if (item === "value") it.desps[index].value = e.target.value
+        if (item === "date") it.desps[index].date = e.target.value
 
         setForm(it);
     }
 
     function addItem() {
-        setForm({ ...form, desps: [...form.desps, { id: form.desps.length + 1, desp: "", desc: "", value: "" }] })
-        console.log(total)
+        setForm({ ...form, desps: [...form.desps, { id: form.desps.length + 1, desp: "", date:"", desc: "", value: "" }] })
     }
 
     function removeItem() {
-        console.log("remove")
+        let it = [...form.desps]
+        it.pop()
+        setForm({...form, desps:it})
     }
 
     return (
@@ -122,6 +123,7 @@ export default function NewRDV() {
                             <thead>
                                 <tr style={{ fontSize: "1.4em", textAlign: "center" }}>
                                     <th style={{ width: "20%" }}>Despesa</th>
+                                    <th style={{ width: "20%" }}>Data</th>
                                     <th style={{ width: "55%" }}>Descrição</th>
                                     <th style={{ width: "20%" }}>R$</th>
                                 </tr>
@@ -157,7 +159,7 @@ export default function NewRDV() {
             </button>
 
             <button type='button' className="btn btn-block btn-danger float-sm-right" style={{ width: '200px ' }}
-                onClick={() => console.log(form)}>
+                onClick={() => {}}>
                 <FaIcon.FaEraser className="mr-3 mb-1" />
                 <span>Cancelar Relatório</span>
             </button>

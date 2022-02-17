@@ -10,7 +10,7 @@ function MainPage() {
     localStorage.setItem("lastPage", window.location.pathname);
 
     return (
-        <div className={`${ localStorage.getItem('darkmode') == 'true' ? 'dark-mode' : '' }`}  >
+        <div className={`${ localStorage.getItem('darkmode') === 'true' ? 'dark-mode' : '' }`}  >
             <Header />
             <SideBar />
             <SideBarRoutes />

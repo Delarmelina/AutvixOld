@@ -7,7 +7,7 @@ import MainPage from './mainPage';
 
 import { VerifyLogin } from "../services/userMethods";
 
-export default props => {
+export default function AppRoutes() {
 
     const [element, setElement] = React.useState(<div></div>);
     const [ElementLogin, setElementLogin] = React.useState(<div></div>);

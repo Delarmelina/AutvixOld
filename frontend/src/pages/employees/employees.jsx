@@ -3,7 +3,7 @@ import React from "react";
 import * as FaIcon from "react-icons/fa";
 import 'reactjs-popup/dist/index.css';
 
-import { getUserList, VerifyTag } from '../../services/userMethods'
+import { getUserList } from '../../services/userMethods'
 import './Popup.css'
 import UpdateUser from './Popups/UpdateUser'
 import DeleteUser from './Popups/DeleteUser'

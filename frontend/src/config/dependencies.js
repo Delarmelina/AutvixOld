@@ -22,4 +22,4 @@ import 'admin-lte/plugins/chart.js/Chart.min.js'
 import 'react-dual-listbox/lib/react-dual-listbox.css'
 import 'react-dual-listbox/src/less/react-dual-listbox.less'
 
-import './scrollbars.css'
+import './webkits.css'

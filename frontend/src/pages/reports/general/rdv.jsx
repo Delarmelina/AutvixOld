@@ -14,9 +14,9 @@ import RDVAprov from "../abas/rdv/rdvsaprov"
 export default function RDV() {
 
     const abas = [
-        ['Novo RDV', 'newrdv'],
-        ['Meus RDVs', 'myrdvs'],
-        ['RDVs pendentes', 'rdvpen'],
+        ['Meus RDVs', 'myrdvs', "","active"],
+        ['Novo RDV', 'newrdv', ""],
+        ['RDVs pendentes', 'rdvpen', ["Financeiro","Planejamento"]],
     ]
 
     return (
@@ -25,10 +25,10 @@ export default function RDV() {
                 <CardHeader abas={abas} />
 
                 <CardBody>
-                    <Aba teste="newrdv" active>
+                    <Aba teste="newrdv">
                         <NewRDV />
                     </Aba>
-                    <Aba teste="myrdvs">
+                    <Aba teste="myrdvs" active>
                         <MyRDV />
                     </Aba>
                     <Aba teste="rdvpen">
